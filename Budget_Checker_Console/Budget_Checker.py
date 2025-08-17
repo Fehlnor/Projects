@@ -25,11 +25,11 @@
     2. Decide how to represent the data
         -I need to represent the budget and item costs in variable mostly integers
         -I need to represent the amount the user is buying (need to prompt the user)
-        userBudget int, flourPrice int, honeyPrice int, sugarPrice int, milkPrice int, breadPrice int, waterPrice int,
-        fullCost
+        userBudget int, flourPrice int, honeyPrice int, sugarPrice int, milkPrice int, breadPrice int, waterPrice int, fullCost int
 
     3. Calculation
         - The calculation for the items | itemsPrice * userPiece
-        -
+        - The calculation for adding the items | fullCost = fullCost + (itemsPrice * userPiece)
+        - The calculation for the budget | userBudget - fullCost  )) or ((   if userBudget >= fullCost
 
 """
