@@ -46,46 +46,55 @@ breadPrice = 15
 waterPrice = 12
 euro = ' €'
 
-# Welcome message and budget prompt and the items
+# Welcome message and budget
 print("--------------------------------------------------")
 print(f"Welcome to the budget checker.")
 userBudget = int(input("Please enter your budget.:"))
 userBudgetFull = userBudget
 
 print(f"\nThe items are the following:")
-print(f"Flour: {flourPrice}{euro} \nHoney: {honeyPrice}{euro} \nSugar: {sugarPrice}{euro}\nMilk: {milkPrice}{euro}\nBread: {breadPrice}{euro}\nWater: {waterPrice}{euro}")
+print(f"Flour: {flourPrice}{euro} \nHoney: {honeyPrice}{euro} \nSugar: {sugarPrice}{euro}")
+print(f"Milk: {milkPrice}{euro}\nBread: {breadPrice}{euro}\nWater: {waterPrice}{euro}")
 print("--------------------------------------------------")
 
 # Ask for the items
 print(f"The application will ask you in sequence to ask how many pieces do you want to buy.")
 userFlour = int(input("Please enter how many flour do you want: "))
-userBudget = userBudget - (flourPrice * userFlour)
+userBudget -= (flourPrice * userFlour)
 print(f"The remaining money is: {userBudget}{euro}")
 
 userHoney = int(input("Please enter how many honey do you want: "))
-userBudget = userBudget - (honeyPrice * userHoney)
+userBudget -= (honeyPrice * userHoney)
 print(f"The remaining money is: {userBudget}{euro}")
 
 userSugar = int(input("Please enter how many sugar do you want: "))
-userBudget = userBudget - (sugarPrice * userSugar)
+userBudget -= (sugarPrice * userSugar)
 print(f"The remaining money is: {userBudget}{euro}")
 
 userMilk = int(input("Please enter how many milk do you want: "))
-userBudget = userBudget - (milkPrice * userMilk)
+userBudget -= (milkPrice * userMilk)
 print(f"The remaining money is: {userBudget}{euro}")
 
 userBread = int(input("Please enter how many bread do you want: "))
-userBudget = userBudget - (breadPrice * userBread)
+userBudget -= (breadPrice * userBread)
 print(f"The remaining money is: {userBudget}{euro}")
 
 userWater = int(input("Please enter how many water do you want: "))
-userBudget = userBudget - (waterPrice * userWater)
+userBudget -= (waterPrice * userWater)
 print(f"The remaining money is: {userBudget}{euro}")
 
-# Calculate the full budget / full cost
+# Calculate totals
 print("--------------------------------------------------")
-fullCost = ((flourPrice * userFlour) + (honeyPrice * userHoney) + (sugarPrice * userSugar) + (milkPrice * userMilk) + (breadPrice * userBread) + (waterPrice * userWater))
-print(f"Your full budget is.: {userBudgetFull}{euro} and your full cost is.: {fullCost}{euro}")
+fullCost = ((flourPrice * userFlour) + 
+            (honeyPrice * userHoney) + 
+            (sugarPrice * userSugar) + 
+            (milkPrice * userMilk) + 
+            (breadPrice * userBread) + 
+            (waterPrice * userWater))
+
+print(f"Your full budget is.:\t {userBudgetFull}{euro}")
+print(f"Your full cost is.:\t {fullCost}{euro}")
+print(f"Remaining money.:\t {userBudget}{euro}")
 print("--------------------------------------------------")
 
 # Decides if it is affordable or not
