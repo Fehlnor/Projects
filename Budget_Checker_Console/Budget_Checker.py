@@ -45,6 +45,7 @@ milkPrice = 4
 breadPrice = 15
 waterPrice = 12
 euro = ' €'
+userFlour = userHoney = userSugar = userMilk = userBread = userWater = 0
 
 # Welcome message and budget
 print("--------------------------------------------------")
@@ -59,29 +60,67 @@ print("--------------------------------------------------")
 
 # Ask for the items
 print(f"The application will ask you in sequence to ask how many pieces do you want to buy.")
-userFlour = int(input("Please enter how many flour do you want: "))
-userBudget -= (flourPrice * userFlour)
-print(f"The remaining money is: {userBudget}{euro}")
+print("\n")
 
-userHoney = int(input("Please enter how many honey do you want: "))
-userBudget -= (honeyPrice * userHoney)
-print(f"The remaining money is: {userBudget}{euro}")
+while True:
+    userFlour = int(input("Please enter how many flour do you want: "))
+    if userFlour <= 0:
+        print("Invalid input! Please enter a number bigger than 0.")
+    else:
+        userBudget -= (flourPrice * userFlour)
+        print(f"The remaining money is: {userBudget}{euro}")
+        print("-----------------------------")
+        break
 
-userSugar = int(input("Please enter how many sugar do you want: "))
-userBudget -= (sugarPrice * userSugar)
-print(f"The remaining money is: {userBudget}{euro}")
+while True:
+    userHoney = int(input("Please enter how many honey do you want: "))
+    if userHoney <= 0:
+        print("Invalid input! Please enter a number bigger than 0.")
+    else:
+        userBudget -= (honeyPrice * userHoney)
+        print(f"The remaining money is: {userBudget}{euro}")
+        print("-----------------------------")
+        break
 
-userMilk = int(input("Please enter how many milk do you want: "))
-userBudget -= (milkPrice * userMilk)
-print(f"The remaining money is: {userBudget}{euro}")
+while True:
+    userSugar = int(input("Please enter how many sugar do you want: "))
+    if userSugar <= 0:  
+        print("Invalid input! Please enter a number bigger than 0.")      
+    else:
+        userBudget -= (sugarPrice * userSugar)
+        print(f"The remaining money is: {userBudget}{euro}")
+        print("-----------------------------")
+        break
 
-userBread = int(input("Please enter how many bread do you want: "))
-userBudget -= (breadPrice * userBread)
-print(f"The remaining money is: {userBudget}{euro}")
+while True:
+    userMilk = int(input("Please enter how many milk do you want: "))
+    if userMilk <= 0:
+        print("Invalid input! Please enter a number bigger than 0.")
+    else:
+        userBudget -= (milkPrice * userMilk)
+        print(f"The remaining money is: {userBudget}{euro}")
+        print("-----------------------------")
+        break
 
-userWater = int(input("Please enter how many water do you want: "))
-userBudget -= (waterPrice * userWater)
-print(f"The remaining money is: {userBudget}{euro}")
+while True:
+    userBread = int(input("Please enter how many bread do you want: "))
+    if userBread <= 0:
+        print("Invalid input! Please enter a number bigger than 0.")
+    else:
+        userBudget -= (breadPrice * userBread)
+        print(f"The remaining money is: {userBudget}{euro}")
+        print("-----------------------------")
+        break
+
+while True:
+    userWater = int(input("Please enter how many water do you want: "))
+    if userWater <= 0:
+        print("Invalid input! Please enter a number bigger than 0.")
+    else:
+        userBudget -= (waterPrice * userWater)
+        print(f"The remaining money is: {userBudget}{euro}")
+        print("\n")
+        break
 
 # Calculate totals
 print("--------------------------------------------------")
