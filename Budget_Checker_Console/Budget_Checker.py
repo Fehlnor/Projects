@@ -33,3 +33,27 @@
         - The calculation for the budget | userBudget - fullCost  )) or ((   if userBudget >= fullCost
 
 """
+userBudget = 250
+fullCost = 0
+flourPrice = 8
+honeyPrice = 22
+sugarPrice = 6
+milkPrice = 4
+breadPrice = 15
+waterPrice = 12
+euro = ' €'
+print(f"Welcome to the budget checker. Your budget is 250 euro. The items are the following:\nFlour: {flourPrice}{euro} \nHoney: {honeyPrice}{euro} \nSugar: {sugarPrice}{euro}\nMilk: {milkPrice}{euro}\nBread: {breadPrice}{euro}\nWater: {waterPrice}{euro}")
+print(f"The application will ask you in sequence to ask how many pieces do you want to buy.")
+userFlour = int(input("Please enter how many flour do you want: "))
+userHoney = int(input("Please enter how many honey do you want: "))
+userSugar = int(input("Please enter how many sugar do you want: "))
+userMilk = int(input("Please enter how many milk do you want: "))
+userBread = int(input("Please enter how many bread do you want: "))
+userWater = int(input("Please enter how many water do you want: "))
+fullCost = ((flourPrice * userFlour) + (honeyPrice * userHoney) + (sugarPrice * userSugar) + (milkPrice * userMilk) + (breadPrice * userBread) + (waterPrice * userWater))
+print(f"Your full budget is.: {userBudget}{euro} and your full cost is.: {fullCost}{euro}")
+
+if userBudget >= fullCost:
+    print("You can afford to buy these items.")
+else:
+    print("You cannot afford to buy these items.")
