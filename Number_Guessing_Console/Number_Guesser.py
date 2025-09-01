@@ -20,9 +20,44 @@
         -I need to represent the difficulty level input in numbers
         -I need to have a random number created depending on the difficulty
         -I need to represent the number the user is entering, how many times the user want to guess and need a counter for it
-        difficultyLevel int, randomNumber int, guessAmount int, guessCounter int
+        difficultyLevel int, randomNumber int, guessNumber int, guessAmount int, guessCounter int
 
     3. Calculation
         ( Easy: 1 | Medium: 2 | Hard: 3 )
         ( Easy: 1-10 | Medium: 1-25 | Hard: 1-50 ) number range for difficulties
 """
+import random
+
+difficultyLevel = 1
+randomNumber = 0
+guessNumber = 1
+guessAmount = 5
+guessCounter = 0
+
+print("Welcome! This is a Number Guesser game.\n")
+difficultyLevel = int(input("The game has a difficulty level: ( 1 - 2 - 3 ) | please enter the difficulty level: "))
+match difficultyLevel:
+    case 1:
+        print("You have choosen level 1 (easy) the guess range is: 1-10. ")
+        randomNumber = random.randint(1, 11)
+    case 2:
+        print("You have choosen level 2 (medium) the guess range is: 1-25. ")
+        randomNumber = random.randint(1, 26)
+    case 3:
+        print("You have choosen level 3 (hard) the guess range is: 1-50. ")
+        randomNumber = random.randint(1, 51)
+    case _:
+        print("Wrong difficulty level.")
+
+guessAmount = int(input("Please enter your guess amount (default 5): "))
+while guessCounter != guessAmount:
+    guessNumber = int(input("Please enter your guess: "))
+    guessCounter += 1
+    print(randomNumber, guessCounter)
+    if guessNumber == randomNumber:
+        print("The guess is correct.")
+        break
+    else:
+        print("The guess is incorrect.")
+    
+print("You run out of guesses.")
