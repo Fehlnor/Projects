@@ -69,11 +69,14 @@ print("\n--------------------------------------------------")
 while guessCounter != guessAmount:
     guessNumber = int(input("Please enter your guess: "))
     guessCounter += 1
-    print(f"{randomNumber}This is your {guessCounter}. guess")
+    print(f"This is your {guessCounter}. guess.\n")
+
     if guessNumber == randomNumber:
         print(f"The guess is correct. You have guessed {guessCounter} times.\n")
         break
-    elif guessNumber != randomNumber:
-        print("The guess is incorrect.\n")
-    else:
-        print(f"You run out of guesses. You have guessed {guessCounter} times.")
+    elif guessNumber < randomNumber:
+        print(f"Too low guess, {guessAmount - guessCounter} guesses left.")
+    else: #guessNumber > randomNumber
+        print(f"Too high guess, {guessAmount - guessCounter} guesses left.")
+else:
+    print(f"You run out of guesses. You have guessed {guessCounter} times.\nThe number was {randomNumber}")
